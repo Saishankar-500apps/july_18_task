@@ -1,0 +1,33 @@
+#NGINX is web server. web server is nothing but computers which delivers the requested web pages.
+#To install nginx 
+sudo apt-install nginx
+#To check nginx status
+sudo systemctl status nginx 
+#To start nginx
+sudo systemctl start nginx
+#Nginx files path
+cd /etc/nginx
+#after listing the files by using ls command we will get some files and folders 
+#where cd to sites-available we will find  file called default that file contains nginx default configuration like server_name,port,return message,etc and also nginx html file path 
+cd /var/www/html 
+#now we will get the html files 
+code index-html
+#now we can change the neccessary things that we want to made changes in the file 
+#after changing the index-file we have to validate the nginx
+sudo nginx -t
+#And then we have to restart nginx
+sudo systemctl restart nginx
+#All the content inside a nginx configuration is nothing but directives. Directives are of two types
+    1.Simple Directives 
+        -listen
+        -server_name
+        -return 
+        -etc 
+    these are terminated with a semi-colon (;)
+    2.Block Directives
+        -events
+        -http
+        -server
+        -etc
+    these are like loops ({})
+    
